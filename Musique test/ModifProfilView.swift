@@ -9,8 +9,68 @@
 import SwiftUI
 
 struct ModifProfilView: View {
+    @State private var enableMedia = false
+    var notificationMode = ["À personne", "Seulement aux amis", "À tout le monde"]
+    @State private var selectedMode = 0
+    @State var username: String = ""
+    @State var bio: String = ""
+    @State private var showingImagePicker = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            Form {
+                
+                Section(header: Text("Image Profil")
+                    .font(.headline)) {
+                    VStack (alignment: .center){
+                        NavigationLink(destination : PickImageView()) {
+                        Circle()
+                            .foregroundColor(.gray)
+                            .frame(width : 150, height : 150)
+                        
+                    }
+                    }
+                }
+                Section(header: Text("Bannière")
+                    .font(.headline)) {
+                    VStack (alignment: .center){
+                        NavigationLink(destination : PickImageView()) {
+                        Rectangle()
+                            .foregroundColor(.gray)
+                            .frame(width : 300, height : 150)
+                        
+                    }
+                    }
+                }
+                
+                Section(header: Text("Nom utilisateur")
+                    .font(.headline)) {
+                    VStack (alignment: .leading){
+                        TextField("Entrer nom", text: $username)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                        
+                    }
+                    
+                }
+                Section(header: Text("Bio")
+                    .font(.headline)) {
+                    VStack (alignment: .leading){
+                        TextField("Ajouter texte", text: $bio)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                        
+                    }
+                    
+                }
+                Section(header: Text("Medias")
+                    .font(.headline)){
+                    Toggle(isOn: $enableMedia) {
+                        Text("Montrer medias")
+                    }
+                    
+                    
+                }
+            } .navigationBarTitle("Modifier profil")
+        }
+        
     }
 }
 
