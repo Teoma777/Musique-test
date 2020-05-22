@@ -131,6 +131,8 @@ struct cellView : View {
                 Text(name)
                 
                 
+                
+                
                 Text(msg).lineLimit(1)
             }
             
