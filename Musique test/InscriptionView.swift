@@ -16,13 +16,13 @@ struct InscriptionView: View {
                     
                     if UIScreen.main.bounds.height > 800{
                         
-                        Home()
+                        Screen()
                     }
                     else{
                         
                         ScrollView(.vertical, showsIndicators: false) {
                             
-                            Home()
+                            Screen()
                         }
                     }
                 }
@@ -35,7 +35,7 @@ struct InscriptionView: View {
             }
         }
         
-        struct Home : View {
+        struct Screen : View {
             
             @State var index = 0
             
