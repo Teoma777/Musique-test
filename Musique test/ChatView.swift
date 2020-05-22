@@ -129,6 +129,8 @@ struct cellView : View {
             
             VStack(alignment: .leading, spacing: 5){
                 Text(name)
+                
+                
                 Text(msg).lineLimit(1)
             }
             
