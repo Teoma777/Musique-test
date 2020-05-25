@@ -19,7 +19,7 @@ struct Friend: Identifiable{
 struct FriendlistView: View {
     let musicians = [
         Friend(photo: "img", name: "Aymeric", instrument: "Batterie", friend: true),
-        Friend(photo: "img", name: "Caroline", instrument: "Chant", friend: false),
+        Friend(photo: "img", name: "Caroline", instrument: "Piano", friend: false),
         Friend(photo: "img", name: "Vincente", instrument: "Violon", friend: true)
     ]
     
