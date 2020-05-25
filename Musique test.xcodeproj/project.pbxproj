@@ -32,7 +32,6 @@
 		6646567024752D9F0009D2D7 /* PickImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6646566F24752D9F0009D2D7 /* PickImageView.swift */; };
 		66465677247555E30009D2D7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66465676247555E30009D2D7 /* AVFoundation.framework */; };
 		6646568024756D880009D2D7 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6646567F24756D880009D2D7 /* SoundPlayer.swift */; };
-		66FF1CD7247BFA4E00F55061 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 66FF1CD6247BFA4E00F55061 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +62,6 @@
 		6646566F24752D9F0009D2D7 /* PickImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickImageView.swift; sourceTree = "<group>"; };
 		66465676247555E30009D2D7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6646567F24756D880009D2D7 /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
-		66FF1CD6247BFA4E00F55061 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +121,6 @@
 				30DEAE64247BBFDB00E22099 /* SearchBar.swift */,
 				30BF06B9247BCAB9006BBE6F /* ImagePickerView.swift */,
 				30BF06BB247BCACC006BBE6F /* Test.mp3 */,
-				66FF1CD6247BFA4E00F55061 /* GoogleService-Info.plist */,
 			);
 			path = "Musique test";
 			sourceTree = "<group>";
@@ -204,7 +201,6 @@
 			files = (
 				30E78D782462BF8300623160 /* LaunchScreen.storyboard in Resources */,
 				30E78D752462BF8300623160 /* Preview Assets.xcassets in Resources */,
-				66FF1CD7247BFA4E00F55061 /* GoogleService-Info.plist in Resources */,
 				30BF06BC247BCACC006BBE6F /* Test.mp3 in Resources */,
 				30E78D722462BF8300623160 /* Assets.xcassets in Resources */,
 			);

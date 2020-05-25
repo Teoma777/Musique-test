@@ -9,11 +9,10 @@
 import SwiftUI
 
 struct FiltersView: View {
-    let names = ["Rock","Jazz","Metal","Electro","Disco","Punk","Musique Classique","Country","Ambient","Deathcore","Dubstep","Eurodance","Hip-Hop","Rap","Samba","Techno"]
+    let names = ["Rock","Jazz","Metal","Electro","Disco","Blues","Pop","Punk","Musique Classique","Country","Ambient","Chiptune","Dubstep","Eurodance","Hip-Hop","Rap","Samba","Techno","Reggae","Funk","Progressive","Accordéon","Batterie","Guitare","Basse","Flute","Chant","Harpe","Triange","Saxophone","Trompette","Violon","Melodica"]
     
     @State private var searchText = ""
     @State var filteredArray = [String]()
-    
     
     var body: some View {
         
@@ -32,44 +31,39 @@ struct FiltersView: View {
                             
                             self.searchText = searchText
                             
-                            if self.searchText == searchText {
+                            if self.searchText == searchText &&
+                                !self.filteredArray.contains(self.searchText) {
                                 
                                 self.filteredArray.append(searchText)
                             }
                             
                         }, label: {
                             Text(searchText)
+                            
                         })
-                        
                     }
+                    
                 }
-                .frame(height: 300)
-                .navigationBarTitle(Text("Search"))
+                .navigationBarTitle(Text("Filtres"))
                 .resignKeyboardOnDragGesture()
                 
-                ForEach(filteredArray, id: \.self) {text in
-                    Text(text)
-                }
                 
+                ForEach(filteredArray, id: \.self) {text in
+                    
+                    Text(text)
+                        .frame(width:150, height: 20)
+                        .foregroundColor(.black)
+                        .padding()
+                        .overlay(RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.black, lineWidth: 1))
+                    
+                    
+                    
+                }
             }
         }
     }
 }
-
-struct FiltersView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            ContentView()
-                .environment(\.colorScheme, .light)
-            
-            ContentView()
-                .environment(\.colorScheme, .dark)
-        }
-    }
-}
-
-
-
 
 struct SearchBarView: View {
     
@@ -106,7 +100,7 @@ struct SearchBarView: View {
             
             if showCancelButton  {
                 
-                Button("Cancel") {
+                Button("Annuler") {
                     UIApplication.shared.endEditing(true)
                     
                     self.searchText = ""
@@ -114,12 +108,23 @@ struct SearchBarView: View {
                 }
                 .foregroundColor(Color(.systemBlue))
             }
-            
         }
         .padding(.horizontal)
         .navigationBarHidden(showCancelButton)
-        
     }
 }
 
 
+
+
+struct FiltersView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            ContentView()
+                .environment(\.colorScheme, .light)
+            
+            ContentView()
+                .environment(\.colorScheme, .dark)
+        }
+    }
+}
