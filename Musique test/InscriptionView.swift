@@ -12,7 +12,7 @@ struct InscriptionView: View {
     var body: some View {
         ZStack{
                     
-            Color.orange.edgesIgnoringSafeArea(.all)
+            Color.clear.edgesIgnoringSafeArea(.all)
                     
                     if UIScreen.main.bounds.height > 800{
                         
@@ -59,12 +59,12 @@ struct InscriptionView: View {
                         }) {
                             
                             Text("Connexion")
-                                .foregroundColor(self.index == 0 ? .black : .white)
+                                .foregroundColor(self.index == 0 ? .black : .black)
                                 .fontWeight(.bold)
                                 .padding(.vertical, 10)
                                 .frame(width: (UIScreen.main.bounds.width - 50) / 2)
                             
-                        }.background(self.index == 0 ? Color.white : Color.clear)
+                        }.background(self.index == 0 ? Color.gray : Color.clear)
                         .clipShape(Capsule())
                         
                         Button(action: {
@@ -77,12 +77,12 @@ struct InscriptionView: View {
                         }) {
                             
                             Text("Inscription")
-                                .foregroundColor(self.index == 1 ? .black : .white)
+                                .foregroundColor(self.index == 1 ? .black : .black)
                                 .fontWeight(.bold)
                                 .padding(.vertical, 10)
                                 .frame(width: (UIScreen.main.bounds.width - 50) / 2)
                             
-                        }.background(self.index == 1 ? Color.white : Color.clear)
+                        }.background(self.index == 1 ? Color.gray : Color.clear)
                         .clipShape(Capsule())
                         
                     }.background(Color.black.opacity(0.1))
@@ -105,7 +105,7 @@ struct InscriptionView: View {
                         }) {
                             
                             Text("Mot de passe oublié ?")
-                                .foregroundColor(.white)
+                                .foregroundColor(.black)
                         
                         }
                         .padding(.top, 20)
