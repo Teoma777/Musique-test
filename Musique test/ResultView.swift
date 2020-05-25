@@ -11,9 +11,9 @@ import SwiftUI
 struct ResultView: View {
     
     let musicians = [
-        Musician(photo: "img", name: "Jean Michel", instrument: "Batterie"),
-        Musician(photo: "img", name: "Audrey", instrument: "Chant"),
-        Musician(photo: "img", name: "Jacqueline", instrument: "Violon")
+        Musician(photo: "img", name: "Aymeric", instrument: "Batterie"),
+        Musician(photo: "img", name: "Caroline", instrument: "Chant"),
+        Musician(photo: "img", name: "Vincente", instrument: "Violon")
     ]
     
     var body: some View {
@@ -35,6 +35,11 @@ struct ResultView: View {
                     Text(musician.instrument)
                     .font(.system(size: 18))
                 }
+                Spacer()
+                Image(systemName: "play.circle")
+                .resizable()
+                .frame(width: 40, height: 40)
+                Spacer()
             }
         }
         }
