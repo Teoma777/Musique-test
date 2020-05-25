@@ -13,17 +13,15 @@ import AVFoundation
 
 struct MyProfilView: View {
     
-   
-    
-  
     
     
-    @State private var selectorIndex = 0
-    @State private var pickerSelection = "two"
+    
     
     var body: some View {
         
+        
         NavigationView{
+            
             
             ZStack {
                 Image("bass")
@@ -41,74 +39,52 @@ struct MyProfilView: View {
                     Text("Morgan")
                         .font(.title)
                     Spacer().frame(height: 350)
-                   }
+                }
                 HStack{
-          Button(action: {
-           playSound(music: "Test", type: "mp3")
-            print("appuyer bouton")
-          }) {
-            
-              Image(systemName: "play.circle")
-            .resizable()
-                .frame(width:50, height: 50)
-          
-          }
-                Button(action: {
-                 stopSound(music: "Test", type: "mp3")
-                  print("appuyer bouton")
-                }) {
-                  
-                    Image(systemName: "pause.circle")
-                  .resizable()
-                      .frame(width:50, height: 50)
-                
-                }
-                }
-                
-                VStack {
-                    Spacer().frame(height: 150)
-                    Picker("", selection: $pickerSelection) {
-                        Text("Bio").tag("Bio")
-                        Text("Media").tag("Media")
-                    }
+                    Button(action: {
+                        playSound(music: "Test", type: "mp3")
+                        print("appuyer bouton")
+                    }) {
                         
-                    .pickerStyle(SegmentedPickerStyle())
-                        
-                    .padding()
-                    if pickerSelection == "Bio" {
-                        
-                        Text("#Rock   #Bassiste   #Basse").foregroundColor(Color.blue)
-                        Text("Je suis bassiste et je cherche un groupe dans le style rock. Je vis à Cognac et j'ai 24 ans. Reste de description flemme d'écrire").padding()
-                        
-                        
-                    } else if pickerSelection == "Media" {
-                        
-                        HStack{
-                            
-                            Image("pinterest")
-                                .resizable()
-                                .frame(width: 75, height: 75)
-                            Image("youtube")
-                                .resizable()
-                                .frame(width: 75, height: 75)
-                            Image("insta")
-                                .resizable()
-                                .frame(width: 75, height: 75)
-                        }
-                        
+                        Image(systemName: "play.circle")
+                            .resizable()
+                            .frame(width:50, height: 50)
                         
                     }
-                
+                    Button(action: {
+                        stopSound(music: "Test", type: "mp3")
+                        print("appuyer bouton")
+                    }) {
+                        
+                        Image(systemName: "pause.circle")
+                            .resizable()
+                            .frame(width:50, height: 50)
+                        
+                    }
                 }
-            
+                
+                
+                if UIScreen.main.bounds.height > 800{
+                    
+                    SegmentedControl()
+                }
+                else{
+                    
+                    ScrollView(.vertical, showsIndicators: false) {
+                        
+                        SegmentedControl()
+                    }
+                }
             }
             
         }
         
-        
     }
     
 }
+
+
+
 
 
 struct MyProfilView_Previews: PreviewProvider {
@@ -117,4 +93,71 @@ struct MyProfilView_Previews: PreviewProvider {
     }
 }
 
+struct SegmentedControl : View {
+    
+    @State var index = 0
+    
+    var body : some View{
+        
+        HStack{
+            
+            Button(action: {
+                
+                withAnimation(.spring(response: 0.8, dampingFraction: 0.5, blendDuration: 0.5)){
+                    
+                    self.index = 0
+                }
+                
+            }) {
+                
+                Text("Connexion")
+                    .foregroundColor(self.index == 0 ? .black : .white)
+                    .fontWeight(.bold)
+                    .padding(.vertical, 10)
+                    .frame(width: (UIScreen.main.bounds.width - 50) / 2)
+                
+            }.background(self.index == 0 ? Color.white : Color.clear)
+                .clipShape(Capsule())
+            
+            Button(action: {
+                
+                withAnimation(.spring(response: 0.8, dampingFraction: 0.5, blendDuration: 0.5)){
+                    
+                    self.index = 1
+                }
+                
+            }) {
+                
+                Text("Inscription")
+                    .foregroundColor(self.index == 1 ? .black : .white)
+                    .fontWeight(.bold)
+                    .padding(.vertical, 10)
+                    .frame(width: (UIScreen.main.bounds.width - 50) / 2)
+                
+            }.background(self.index == 1 ? Color.white : Color.clear)
+                .clipShape(Capsule())
+            
+        }.background(Color.black.opacity(0.1))
+            .clipShape(Capsule())
+            .padding(.top, 25)
+        
+        
+       
+        
+    }
+}
 
+struct Description : View {
+    var body : some View{
+        HStack{
+            Text("test")
+            Text("test")
+        }
+    }
+}
+
+struct SocialMedia : View {
+    var body : some View{
+        Text("test")
+    }
+}

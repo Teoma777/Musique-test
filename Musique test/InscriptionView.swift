@@ -43,9 +43,9 @@ struct InscriptionView: View {
                 
                 VStack{
                     
-                    Image("logo")
+                    Image(systemName: "l.circle")
                     .resizable()
-                    .frame(width: 200, height: 180)
+                    .frame(width: 180, height: 180)
                     
                     HStack{
                         
