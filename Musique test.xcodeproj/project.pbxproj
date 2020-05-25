@@ -26,6 +26,7 @@
 		30E78D722462BF8300623160 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30E78D712462BF8300623160 /* Assets.xcassets */; };
 		30E78D752462BF8300623160 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30E78D742462BF8300623160 /* Preview Assets.xcassets */; };
 		30E78D782462BF8300623160 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E78D762462BF8300623160 /* LaunchScreen.storyboard */; };
+		8081914324698CC400907B9F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8081914224698CC400907B9F /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		30E78D742462BF8300623160 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		30E78D772462BF8300623160 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30E78D792462BF8300623160 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8081914224698CC400907B9F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				30713CBA24642B6500AD62C6 /* HomeView.swift */,
 				30713CBC24642B8D00AD62C6 /* CatalogueView.swift */,
 				30713CBE24642B9600AD62C6 /* FiltersView.swift */,
+				8081914224698CC400907B9F /* SearchBar.swift */,
 				30713CC024642BA200AD62C6 /* ResultView.swift */,
 				30713CC224642BB200AD62C6 /* MyProfilView.swift */,
 				30713CC424642BBC00AD62C6 /* ModifProfilView.swift */,
@@ -200,6 +203,7 @@
 				30713CC124642BA200AD62C6 /* ResultView.swift in Sources */,
 				30713CC724642BDF00AD62C6 /* UserProfilView.swift in Sources */,
 				30713CBD24642B8D00AD62C6 /* CatalogueView.swift in Sources */,
+				8081914324698CC400907B9F /* SearchBar.swift in Sources */,
 				30E78D702462BF8100623160 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
