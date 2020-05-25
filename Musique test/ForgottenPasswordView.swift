@@ -14,7 +14,7 @@ struct ForgottenPasswordView: View {
     
     var body: some View {
         ZStack{
-         Color.orange.edgesIgnoringSafeArea(.all)
+         Color.clear.edgesIgnoringSafeArea(.all)
             VStack {
                 Section {
                     

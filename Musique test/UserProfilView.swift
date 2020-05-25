@@ -9,11 +9,10 @@
 import SwiftUI
 
 struct UserProfilView: View {
-    @State private var selectorIndex = 0
-       @State private var pickerSelection = "two"
+   @State var selected = 0
     var body: some View {
         NavigationView{
-            
+            ScrollView {
             ZStack {
                 Image("saxophone")
                     .resizable()
@@ -57,44 +56,59 @@ struct UserProfilView: View {
                       }
                       }
                 
-                VStack {
-                    Spacer().frame(height: 150)
-                    Picker("", selection: $pickerSelection) {
-                        Text("Bio").tag("Bio")
-                        Text("Media").tag("Media")
-                    }
-                        
-                    .pickerStyle(SegmentedPickerStyle())
-                        
-                    .padding()
-                    if pickerSelection == "Bio" {
-                        
-                        Text("#Jazz   #Saxophone   #Paris   #Groupe").foregroundColor(Color.blue)
-                        Text("Je m'appelle Emma, j'ai 22 ans et je suis saxophoniste. Je pratique le saxo depuis 6 ans. Fan de jazz j'ai pour projet de fonder un groupe de jazz qui pourrait se produire dans des bars ou autres. Si vous êtes intéressé, envoyez moi une demande d'ami. ").padding()
-                        
-                        
-                    } else if pickerSelection == "Media" {
-                        
-                        VStack{
-                            
-                            
-                            Image(systemName: "exclamationmark.triangle").resizable().frame(width: 100, height: 100).foregroundColor(Color.gray)
-                            Text("Vous n'avez pas accès à cette partie car vous n'êtes pas ami avec cet utilisateur").fontWeight(.bold).multilineTextAlignment(.center).padding().foregroundColor(Color.gray)
-                        }
-                        
-                        
-                    }
-                
+                 VStack(spacing: 20){
+                                        Spacer()
+                                          .frame(height: 320)
+                                        Segmentedbar(selected: self.$selected).padding(.top)
+                                  
+                                        if self.selected == 0{
+                                                
+                                                Bio2()
+                                            }
+                                            else{
+                                                
+                                                Medias2()
+                                            }
+                                            
+                              }
+                }
                 }
             
             }
             
         }
     }
-}
+
 
 struct UserProfilView_Previews: PreviewProvider {
     static var previews: some View {
         UserProfilView()
+    }
+}
+struct Bio2 : View {
+    
+    var body : some View{
+        VStack{
+            Text("#Jazz   #Saxophone   #Paris   #Groupe").foregroundColor(.blue).padding()
+
+            Text("Je m'appelle Emma, j'ai 22 ans et je suis saxophoniste. Je pratique le saxo depuis 6 ans. Fan de jazz j'ai pour projet de fonder un groupe de jazz qui pourrait se produire dans des bars ou autres. Si vous êtes intéressé, envoyez moi une demande d'ami.").padding()
+    }
+    }
+}
+
+struct Medias2 : View {
+    
+    var body : some View{
+        
+        VStack{
+            
+            Image(systemName: "exclamationmark.triangle")
+                .resizable()
+                .foregroundColor(.gray)
+                .frame(width: 80, height: 80)
+            Text("Vous n'avez pas accès à cette partie car vous n'êtes pas ami avec cet utilisateur")
+                .multilineTextAlignment(.center)
+             .foregroundColor(.gray)
+        }
     }
 }

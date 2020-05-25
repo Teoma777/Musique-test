@@ -47,6 +47,7 @@ struct ModifProfilView: View {
                     VStack (alignment: .leading){
                         TextField("Entrer nom", text: $username)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.vertical, 10)
                         
                     }
                     
@@ -56,7 +57,7 @@ struct ModifProfilView: View {
                     VStack (alignment: .leading){
                         TextField("Ajouter texte", text: $bio)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
-                        
+                        .padding(.vertical, 10)
                     }
                     
                 }

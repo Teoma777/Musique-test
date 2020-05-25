@@ -10,10 +10,9 @@ import SwiftUI
 import AVFoundation
 
 
-
 struct MyProfilView: View {
     
-    
+     @State var selected = 0
     
     
     
@@ -21,13 +20,14 @@ struct MyProfilView: View {
         
         
         NavigationView{
-            
+            ScrollView {
             
             ZStack {
                 Image("bass")
                     .resizable()
                     .frame(width:420, height: 250)
                     .position(x: 210, y: 60)
+                
                 VStack{
                     
                     Image("man")
@@ -62,28 +62,33 @@ struct MyProfilView: View {
                         
                     }
                 }
-                
-                
-                if UIScreen.main.bounds.height > 800{
+             
+            
+                VStack(spacing: 20){
+                          Spacer()
+                            .frame(height: 250)
+                          Segmentedbar(selected: self.$selected).padding(.top)
                     
-                    SegmentedControl()
+                          if self.selected == 0{
+                                  
+                                  Bio()
+                              }
+                              else{
+                                  
+                                  Medias()
+                              }
+                              
                 }
-                else{
-                    
-                    ScrollView(.vertical, showsIndicators: false) {
-                        
-                        SegmentedControl()
+                          
+                          
+                }
+                
                     }
                 }
             }
-            
-        }
-        
-    }
-    
 }
-
-
+        
+        
 
 
 
@@ -92,10 +97,9 @@ struct MyProfilView_Previews: PreviewProvider {
         MyProfilView()
     }
 }
-
-struct SegmentedControl : View {
+struct Segmentedbar : View {
     
-    @State var index = 0
+    @Binding var selected : Int
     
     var body : some View{
         
@@ -103,61 +107,62 @@ struct SegmentedControl : View {
             
             Button(action: {
                 
-                withAnimation(.spring(response: 0.8, dampingFraction: 0.5, blendDuration: 0.5)){
-                    
-                    self.index = 0
-                }
+                self.selected = 0
                 
             }) {
                 
-                Text("Connexion")
-                    .foregroundColor(self.index == 0 ? .black : .white)
-                    .fontWeight(.bold)
-                    .padding(.vertical, 10)
-                    .frame(width: (UIScreen.main.bounds.width - 50) / 2)
-                
-            }.background(self.index == 0 ? Color.white : Color.clear)
-                .clipShape(Capsule())
-            
-            Button(action: {
-                
-                withAnimation(.spring(response: 0.8, dampingFraction: 0.5, blendDuration: 0.5)){
-                    
-                    self.index = 1
-                }
-                
-            }) {
-                
-                Text("Inscription")
-                    .foregroundColor(self.index == 1 ? .black : .white)
-                    .fontWeight(.bold)
-                    .padding(.vertical, 10)
-                    .frame(width: (UIScreen.main.bounds.width - 50) / 2)
-                
-            }.background(self.index == 1 ? Color.white : Color.clear)
-                .clipShape(Capsule())
-            
-        }.background(Color.black.opacity(0.1))
+              Text("Bio")
+                 .foregroundColor(self.selected == 0 ? .black : .black)
+                .fontWeight(.bold)
+                .padding(.vertical, 10)
+                .frame(width: 150)
+            }.background(self.selected == 0 ? Color.gray : Color.clear)
             .clipShape(Capsule())
-            .padding(.top, 25)
-        
-        
-       
-        
+           
+            
+            Button(action: {
+                
+                self.selected = 1
+                
+            }) {
+                
+               Text("Medias")
+                .foregroundColor(self.selected == 1 ? .black : .black)
+                .fontWeight(.bold)
+                .padding(.vertical, 10)
+                .frame(width: 150)
+            }.background(self.selected == 1 ? Color.gray : Color.clear)
+            .clipShape(Capsule())
+            
+            
+            }.padding(8)
+            .background(Color("Color2"))
+            .clipShape(Capsule())
+            .animation(.default)
+    }
+}
+struct Bio : View {
+    
+    var body : some View{
+        VStack{
+            Text("#Rock   #Bassiste   #Basse").foregroundColor(.blue)
+
+      Text("Je suis bassiste et je cherche un groupe dans le style rock. Je vis à Cognac et j'ai 24 ans. Reste de description flemme d'écrire")
+    }
     }
 }
 
-struct Description : View {
+struct Medias : View {
+    
     var body : some View{
+        
         HStack{
-            Text("test")
-            Text("test")
+            
+            Image("Insta")
+                .resizable()
+                .frame(width: 80, height: 80)
+            Image("youtube") .resizable()
+                           .frame(width: 80, height: 80)
         }
-    }
-}
-
-struct SocialMedia : View {
-    var body : some View{
-        Text("test")
     }
 }
