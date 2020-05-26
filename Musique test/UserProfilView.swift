@@ -11,13 +11,12 @@ import SwiftUI
 struct UserProfilView: View {
    @State var selected = 0
     var body: some View {
-        NavigationView{
             ScrollView {
             ZStack {
                 Image("saxophone")
                     .resizable()
                     .frame(width:420, height: 250)
-                    .position(x: 210, y: 30)
+                    .position(x: 210, y: 90)
                 VStack{
                     
                     Image("woman")
@@ -60,7 +59,7 @@ struct UserProfilView: View {
                 
                  VStack(spacing: 20){
                                         Spacer()
-                                          .frame(height: 320)
+                                          .frame(height: 480)
                                         Segmentedbar(selected: self.$selected).padding(.top)
                                   
                                         if self.selected == 0{
@@ -75,10 +74,20 @@ struct UserProfilView: View {
                               }
                 }
                 }
-            
-            }
-            
-        }
+    .navigationBarItems(trailing:
+                Button(action: {
+                
+                }) {
+                    
+                    Image(systemName: "heart")
+                    
+                }
+            .navigationBarTitle(Text("Profil"), displayMode: .inline)
+            .resignKeyboardOnDragGesture()
+    
+       )
+        
+    }
     }
 
 

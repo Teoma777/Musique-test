@@ -71,11 +71,11 @@ struct ModifProfilView: View {
                 }
             } .navigationBarItems(trailing:
             //Text("Filtres")
-            NavigationLink(destination: ModifProfilView()) {
-                Text("Profil")
+            NavigationLink(destination: MyProfilView()) {
+                Text("Valider")
             }
                 .foregroundColor(.blue))
-            .navigationBarTitle(Text("Valider"), displayMode: .inline)
+            .navigationBarTitle(Text("Modifier"), displayMode: .inline)
             .resignKeyboardOnDragGesture()
         
         

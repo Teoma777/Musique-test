@@ -26,8 +26,15 @@ struct MyProfilView: View {
                     Image("bass")
                         .resizable()
                         .frame(width:420, height: 250)
-                        .position(x: 210, y: 30)
+                        .position(x: 210, y: 10)
                     
+
+NavigationLink(destination: ModifProfilView()) {
+                    Image(systemName: "pencil.circle").resizable()
+                    .frame(width:80, height: 80)
+                    .position(x: 310, y: 400)
+                        .foregroundColor(.blue)
+                    }
                     VStack{
                         
                         Image("man")
@@ -66,7 +73,7 @@ struct MyProfilView: View {
                     
                     VStack(spacing: 20){
                         Spacer()
-                            .frame(height: 320)
+                            .frame(height: 480)
                         Segmentedbar(selected: self.$selected).padding(.top)
                         
                         if self.selected == 0{
@@ -80,20 +87,20 @@ struct MyProfilView: View {
                         
                     }
                     
-                    
+                }
                 }
                 
             }
-        }
-     .navigationBarItems(trailing:
-     //Text("Filtres")
-     NavigationLink(destination: ModifProfilView()) {
-         Text("Profil")
-     }
-         .foregroundColor(.blue))
-     .navigationBarTitle(Text("Modifier"), displayMode: .inline)
-     .resignKeyboardOnDragGesture()
-    }
+    
+    .navigationBarItems(trailing:
+                 NavigationLink(destination: ModifProfilView()) {
+                     Text("Modifier")
+                 }
+                     .foregroundColor(.blue))
+               .navigationBarTitle(Text("Profil"), displayMode: .inline)
+               .resignKeyboardOnDragGesture()
+       
+            }
 }
 
 
