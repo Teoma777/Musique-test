@@ -32,7 +32,7 @@ struct MyProfilView: View {
 NavigationLink(destination: ModifProfilView()) {
                     Image(systemName: "pencil.circle").resizable()
                     .frame(width:80, height: 80)
-                    .position(x: 310, y: 400)
+                    .position(x: 310, y: 80)
                         .foregroundColor(.blue)
                     }
                     VStack{
