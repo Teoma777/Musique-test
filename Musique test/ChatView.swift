@@ -359,6 +359,7 @@ struct msgType : Identifiable {
 var msgs : [msgType] = [
     msgType(id: 0, msg: "Sympa le son ;)", time: "12:12", name: "Emma", msgs: "2", pic: "woman"),
     msgType(id: 1, msg: "coucou tu veux voir...", time: "11:11", name: "Clara", msgs: "2", pic: "woman2"),
-    msgType(id: 2, msg: "Coucou tu viens au concert ?", time: "13:20", name: "Jeannine", msgs: "1", pic: "woman3")
+    msgType(id: 2, msg: "Coucou tu viens au concert ?", time: "13:20", name: "Jeannine", msgs: "1", pic: "woman3"),
+    msgType(id: 3, msg: "test", time: "13:55", name: "Emilie", msgs: "Salut ça va ? ", pic: "woman3")
 ]
 
