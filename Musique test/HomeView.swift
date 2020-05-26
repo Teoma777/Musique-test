@@ -12,13 +12,15 @@ struct HomeView: View {
     
     
     var body: some View {
+        NavigationView{
         VStack{
         
-        NavigationView {
+        
             
             List {
                 
                 HStack{
+                    NavigationLink(destination: UserProfilView()) {
                     Image("woman")
                         .resizable()
                         .frame(width: 80, height: 80)
@@ -31,7 +33,7 @@ struct HomeView: View {
                         Text("Il y a 15 minutes")
                             .font(.system(size: 13))
                     }
-                    
+                    }
                 }
                 HStack{
                     Image("woman")

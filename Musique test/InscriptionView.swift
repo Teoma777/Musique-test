@@ -10,6 +10,7 @@ import SwiftUI
 
 struct InscriptionView: View {
     var body: some View {
+        NavigationView{
         ZStack{
                     
             Color.clear.edgesIgnoringSafeArea(.all)
@@ -112,7 +113,7 @@ struct InscriptionView: View {
                         .padding(.top, 20)
                     }
                 
-                    
+                }
                 
                 }
                 
@@ -168,23 +169,20 @@ struct InscriptionView: View {
                     .cornerRadius(10)
                     .padding(.top, 25)
                     
-                    
-                    Button(action: {
-                        
-                    }) {
-                        
+                
+                        NavigationLink(destination: HomeView()) {
                         Text("Connexion")
                             .foregroundColor(.white)
                             .fontWeight(.bold)
                             .padding(.vertical)
                             .frame(width: UIScreen.main.bounds.width - 100)
-                        
-                    }.background(Color.gray)
-                    
+                        .background(Color.gray)
+                      
                     .cornerRadius(8)
                     .offset(y: -40)
                     .padding(.bottom, -40)
                     .shadow(radius: 15)
+                              }
                 }
             }
         }
