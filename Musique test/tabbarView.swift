@@ -12,7 +12,6 @@ struct TabBarView: View {
     var body: some View {
         TabView {
             HomeView()
-                .padding(.top)
                 .tabItem {
                     Image(systemName: "captions.bubble")
                     Text("Actus")
@@ -34,7 +33,6 @@ struct TabBarView: View {
             }.tag(3)
         }
             
-        .edgesIgnoringSafeArea(.top)
         
     }
 }
