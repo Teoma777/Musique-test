@@ -20,9 +20,9 @@ struct CatalogueView: View {
     @State private var showCancelButton: Bool = false
     
     let musicians = [
-        Musician(photo: "img", name: "Jean Michel", instrument: "Batterie"),
-        Musician(photo: "img", name: "Audrey", instrument: "Chant"),
-        Musician(photo: "img", name: "Jacqueline", instrument: "Violon")
+        Musician(photo: "man2", name: "Josh", instrument: "Batterie"),
+        Musician(photo: "woman2", name: "Audrey", instrument: "Chant"),
+        Musician(photo: "woman3", name: "Jacqueline", instrument: "Violon")
     ]
     
     //let names = ["John", "Joe", "Dana", "Piper"]

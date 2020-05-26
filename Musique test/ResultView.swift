@@ -11,9 +11,9 @@ import SwiftUI
 struct ResultView: View {
     
     let musicians = [
-        Musician(photo: "img", name: "Aymeric", instrument: "Batterie"),
-        Musician(photo: "img", name: "Caroline", instrument: "Chant"),
-        Musician(photo: "img", name: "Vincente", instrument: "Violon")
+        Musician(photo: "woman", name: "Emma", instrument: "Saxophone"),
+        Musician(photo: "img", name: "Caroline", instrument: "Piano"),
+        Musician(photo: "kevin", name: "Kevin", instrument: "Mélodica")
     ]
     
     var body: some View {
