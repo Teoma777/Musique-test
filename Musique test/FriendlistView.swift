@@ -42,10 +42,7 @@ struct FriendlistView: View {
                     Text(musician.instrument)
                     .font(.system(size: 18))
                 }
-                Spacer()
-                Image(systemName: "play.circle")
-                .resizable()
-                .frame(width: 40, height: 40)
+                
                 Spacer()
                 if(musician.friend){
                     Image(systemName: "checkmark")

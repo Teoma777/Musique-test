@@ -26,23 +26,23 @@ struct MyProfilView: View {
                     Image("bass")
                         .resizable()
                         .frame(width:420, height: 250)
-                        .position(x: 210, y: 60)
+                        .position(x: 210, y: 30)
                     
                     VStack{
                         
                         Image("man")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 180.0, height: 180.0, alignment: .center).foregroundColor(Color.red)
+                            .frame(width: 180.0, height: 180.0, alignment: .center)
                             .clipShape(Circle())
                         
                         Text("Morgan")
                             .font(.title)
                         Spacer().frame(height: 350)
                     }
-                    HStack{
+                    HStack(spacing: 10){
                         Button(action: {
-                            playSound(music: "Test", type: "mp3")
+                            playSound(music: "Rock", type: "mp3")
                             print("appuyer bouton")
                         }) {
                             
@@ -52,7 +52,7 @@ struct MyProfilView: View {
                             
                         }
                         Button(action: {
-                            stopSound(music: "Test", type: "mp3")
+                            stopSound(music: "Rock", type: "mp3")
                             print("appuyer bouton")
                         }) {
                             
@@ -66,7 +66,7 @@ struct MyProfilView: View {
                     
                     VStack(spacing: 20){
                         Spacer()
-                            .frame(height: 250)
+                            .frame(height: 320)
                         Segmentedbar(selected: self.$selected).padding(.top)
                         
                         if self.selected == 0{
@@ -86,13 +86,13 @@ struct MyProfilView: View {
             }
         }
      .navigationBarItems(trailing:
-      //Text("Filtres")
-      NavigationLink(destination: ModifProfilView()) {
-          Text("Profil")
-      }
-          .foregroundColor(.blue))
-      .navigationBarTitle(Text("Modifier"), displayMode: .inline)
-      .resignKeyboardOnDragGesture()
+     //Text("Filtres")
+     NavigationLink(destination: ModifProfilView()) {
+         Text("Profil")
+     }
+         .foregroundColor(.blue))
+     .navigationBarTitle(Text("Modifier"), displayMode: .inline)
+     .resignKeyboardOnDragGesture()
     }
 }
 
@@ -153,9 +153,9 @@ struct Bio : View {
     
     var body : some View{
         VStack{
-            Text("#Rock   #Bassiste   #Basse").foregroundColor(.blue)
+            Text("#Rock   #Bassiste   #Basse").foregroundColor(.blue).padding()
 
-      Text("Je suis bassiste et je cherche un groupe dans le style rock. Je vis à Cognac et j'ai 24 ans. Reste de description flemme d'écrire")
+            Text("Je suis bassiste et je cherche un chanteur dans le style rock. Je vis à Cognac et j'ai 24 ans. Pratiquant la basse depuis maintenant 3 ans, je voudrais trouvé un chanteur avec qui pourrait chanter sur mes compositions").padding()
     }
     }
 }

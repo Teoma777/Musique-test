@@ -16,7 +16,7 @@ struct ModifProfilView: View {
     @State var bio: String = ""
     @State private var showingImagePicker = false
     var body: some View {
-        NavigationView{
+      
             Form {
                 
                 Section(header: Text("Image Profil")
@@ -69,8 +69,15 @@ struct ModifProfilView: View {
                     
                     
                 }
-            } .navigationBarTitle("Modifier profil")
-        }
+            } .navigationBarItems(trailing:
+            //Text("Filtres")
+            NavigationLink(destination: ModifProfilView()) {
+                Text("Profil")
+            }
+                .foregroundColor(.blue))
+            .navigationBarTitle(Text("Valider"), displayMode: .inline)
+            .resignKeyboardOnDragGesture()
+        
         
     }
 }

@@ -17,13 +17,13 @@ struct UserProfilView: View {
                 Image("saxophone")
                     .resizable()
                     .frame(width:420, height: 250)
-                    .position(x: 210, y: 60)
+                    .position(x: 210, y: 30)
                 VStack{
                     
                     Image("woman")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 180.0, height: 180.0, alignment: .center).foregroundColor(Color.red)
+                        .frame(width: 180.0, height: 180.0, alignment: .center)
                         .clipShape(Circle())
                     
                     Text("Emma")
@@ -33,9 +33,9 @@ struct UserProfilView: View {
             
           
                 
-                HStack{
+                HStack(spacing: 10){
                 Button(action: {
-                 playSound(music: "Test", type: "mp3")
+                 playSound(music: "piano", type: "mp3")
                   print("appuyer bouton")
                 }) {
                   
@@ -45,7 +45,7 @@ struct UserProfilView: View {
                 
                 }
                       Button(action: {
-                       stopSound(music: "Test", type: "mp3")
+                       stopSound(music: "piano", type: "mp3")
                         print("appuyer bouton")
                       }) {
                         
@@ -55,6 +55,8 @@ struct UserProfilView: View {
                       
                       }
                       }
+        
+                
                 
                  VStack(spacing: 20){
                                         Spacer()

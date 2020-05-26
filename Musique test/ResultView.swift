@@ -35,10 +35,28 @@ struct ResultView: View {
                     .font(.system(size: 18))
                 }
                 Spacer()
-                Image(systemName: "play.circle")
-                .resizable()
-                .frame(width: 40, height: 40)
-                Spacer()
+                HStack{
+                    Button(action: {
+                        playSound(music: "piano", type: "mp3")
+                        print("appuyer bouton")
+                    }) {
+                        
+                        Image(systemName: "play.circle")
+                            .resizable()
+                            .frame(width:50, height: 50)
+                        
+                    }
+                    Button(action: {
+                        stopSound(music: "piano", type: "mp3")
+                        print("appuyer bouton")
+                    }) {
+                        
+                        Image(systemName: "pause.circle")
+                            .resizable()
+                            .frame(width:50, height: 50)
+                        
+                    }
+                }
             }
         }
         }

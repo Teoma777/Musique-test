@@ -42,8 +42,7 @@ struct FiltersView: View {
                     }
                     
                 }
-                .navigationBarTitle(Text("Filtres"))
-                .resignKeyboardOnDragGesture()
+ 
                 
                 
                 ForEach(filteredArray, id: \.self) {text in
@@ -126,10 +125,10 @@ struct SearchBarView: View {
 struct FiltersView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView()
+            FiltersView()
                 .environment(\.colorScheme, .light)
             
-            ContentView()
+            FiltersView()
                 .environment(\.colorScheme, .dark)
         }
     }
