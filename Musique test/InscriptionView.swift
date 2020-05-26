@@ -26,6 +26,7 @@ struct InscriptionView: View {
                         }
                     }
                 }
+      
             }
         }
         
@@ -73,7 +74,7 @@ struct InscriptionView: View {
                                
                               self.index = 1
                            }
-                            
+                    
                         }) {
                             
                             Text("Inscription")
@@ -112,7 +113,7 @@ struct InscriptionView: View {
                     }
                 
                     
-                    
+                
                 }
                 
             }

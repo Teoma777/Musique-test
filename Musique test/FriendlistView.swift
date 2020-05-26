@@ -31,11 +31,14 @@ struct FriendlistView: View {
         
         ForEach(musicians) {
             musician in
+            NavigationLink(destination: ChatView()) {
             HStack{
+                 
                 Image(musician.photo)
                     .resizable()
                     .frame(width: 80, height: 80)
                     .cornerRadius(50)
+                }
                 VStack(alignment: .leading){
             Text(musician.name)
                 .font(.title)
