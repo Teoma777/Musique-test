@@ -8,39 +8,40 @@
 
 import SwiftUI
 
-struct tabbarView: View {
+struct TabBarView: View {
     var body: some View {
-      TabView {
-                   Text("VIEW")
-                       .tabItem {
-                           Image(systemName: "captions.bubble")
-                           Text("Actus")
-                       }.tag(0)
-                   Text("VIEW")
-                       .tabItem {
-                           Image(systemName: "magnifyingglass")
-                           Text("Recherche")
-                       }.tag(1)
-                    Text("View")
-                        .tabItem {
-                            Image(systemName: "person")
-                            Text("Profil")
-                        }.tag(2)
-                    Text("View")
-                        .tabItem {
-                            Image(systemName: "heart")
-                            Text("Amis")
-                        }.tag(3)
-               }
-
-                .edgesIgnoringSafeArea(.top)
-
-            }
+        TabView {
+            HomeView()
+                .padding(.top)
+                .tabItem {
+                    Image(systemName: "captions.bubble")
+                    Text("Actus")
+            }.tag(0)
+            CatalogueView()
+                .tabItem {
+                    Image(systemName: "magnifyingglass")
+                    Text("Recherche")
+            }.tag(1)
+            MyProfilView()
+                .tabItem {
+                    Image(systemName: "person")
+                    Text("Profil")
+            }.tag(2)
+            FriendlistView()
+                .tabItem {
+                    Image(systemName: "heart")
+                    Text("Amis")
+            }.tag(3)
         }
-    
+            
+        .edgesIgnoringSafeArea(.top)
+        
+    }
+}
+
 
 struct tabbarView_Previews: PreviewProvider {
     static var previews: some View {
-        tabbarView()
+        TabBarView()
     }
 }
