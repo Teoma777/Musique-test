@@ -18,7 +18,6 @@ struct ResultView: View {
     
     var body: some View {
         
-        NavigationView {
         
         List {
         
@@ -43,20 +42,15 @@ struct ResultView: View {
             }
         }
         }
-        .navigationBarItems(leading:
-            
-            NavigationLink(destination: FiltersView()) {
-                Text("< Retour")
-            }
-                .foregroundColor(.blue))
+
             .navigationBarTitle(Text("Résultats"), displayMode: .inline)
             .resignKeyboardOnDragGesture()
-        }
-    }
+        
 }
 
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
         ResultView()
     }
+}
 }

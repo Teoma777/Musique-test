@@ -15,8 +15,6 @@ struct FiltersView: View {
     @State var filteredArray = [String]()
     
     var body: some View {
-        
-        NavigationView {
             
             VStack {
                 
@@ -61,9 +59,10 @@ struct FiltersView: View {
                     
                 }
             }
+        .navigationBarTitle(Text("Filtres"), displayMode: .inline)
+        .resignKeyboardOnDragGesture()
         }
-    }
-}
+
 
 struct SearchBarView: View {
     
@@ -110,7 +109,14 @@ struct SearchBarView: View {
             }
         }
         .padding(.horizontal)
+           
         .navigationBarHidden(showCancelButton)
+        .navigationBarItems(trailing:
+                   //Text("Filtres")
+                   NavigationLink(destination: ResultView()) {
+                       Text("Valider")
+                   }
+                       .foregroundColor(.blue))
     }
 }
 
@@ -127,4 +133,5 @@ struct FiltersView_Previews: PreviewProvider {
                 .environment(\.colorScheme, .dark)
         }
     }
+}
 }

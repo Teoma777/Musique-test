@@ -12,7 +12,7 @@ import AVFoundation
 
 struct MyProfilView: View {
     
-     @State var selected = 0
+    @State var selected = 0
     
     
     
@@ -21,74 +21,82 @@ struct MyProfilView: View {
         
         NavigationView{
             ScrollView {
-            
-            ZStack {
-                Image("bass")
-                    .resizable()
-                    .frame(width:420, height: 250)
-                    .position(x: 210, y: 60)
                 
-                VStack{
-                    
-                    Image("man")
+                ZStack {
+                    Image("bass")
                         .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 180.0, height: 180.0, alignment: .center).foregroundColor(Color.red)
-                        .clipShape(Circle())
+                        .frame(width:420, height: 250)
+                        .position(x: 210, y: 60)
                     
-                    Text("Morgan")
-                        .font(.title)
-                    Spacer().frame(height: 350)
-                }
-                HStack{
-                    Button(action: {
-                        playSound(music: "Test", type: "mp3")
-                        print("appuyer bouton")
-                    }) {
+                    VStack{
                         
-                        Image(systemName: "play.circle")
+                        Image("man")
                             .resizable()
-                            .frame(width:50, height: 50)
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 180.0, height: 180.0, alignment: .center).foregroundColor(Color.red)
+                            .clipShape(Circle())
                         
+                        Text("Morgan")
+                            .font(.title)
+                        Spacer().frame(height: 350)
                     }
-                    Button(action: {
-                        stopSound(music: "Test", type: "mp3")
-                        print("appuyer bouton")
-                    }) {
-                        
-                        Image(systemName: "pause.circle")
-                            .resizable()
-                            .frame(width:50, height: 50)
-                        
+                    HStack{
+                        Button(action: {
+                            playSound(music: "Test", type: "mp3")
+                            print("appuyer bouton")
+                        }) {
+                            
+                            Image(systemName: "play.circle")
+                                .resizable()
+                                .frame(width:50, height: 50)
+                            
+                        }
+                        Button(action: {
+                            stopSound(music: "Test", type: "mp3")
+                            print("appuyer bouton")
+                        }) {
+                            
+                            Image(systemName: "pause.circle")
+                                .resizable()
+                                .frame(width:50, height: 50)
+                            
+                        }
                     }
-                }
-             
-            
-                VStack(spacing: 20){
-                          Spacer()
+                    
+                    
+                    VStack(spacing: 20){
+                        Spacer()
                             .frame(height: 250)
-                          Segmentedbar(selected: self.$selected).padding(.top)
+                        Segmentedbar(selected: self.$selected).padding(.top)
+                        
+                        if self.selected == 0{
+                            
+                            Bio()
+                        }
+                        else{
+                            
+                            Medias()
+                        }
+                        
+                    }
                     
-                          if self.selected == 0{
-                                  
-                                  Bio()
-                              }
-                              else{
-                                  
-                                  Medias()
-                              }
-                              
-                }
-                          
-                          
+                    
                 }
                 
-                    }
-                }
             }
+        }
+     .navigationBarItems(trailing:
+      //Text("Filtres")
+      NavigationLink(destination: ModifProfilView()) {
+          Text("Profil")
+      }
+          .foregroundColor(.blue))
+      .navigationBarTitle(Text("Modifier"), displayMode: .inline)
+      .resignKeyboardOnDragGesture()
+    }
 }
-        
-        
+
+
 
 
 
