@@ -23,6 +23,8 @@
 		30BF06BA247BCAB9006BBE6F /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BF06B9247BCAB9006BBE6F /* ImagePickerView.swift */; };
 		30BF06BC247BCACC006BBE6F /* Test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30BF06BB247BCACC006BBE6F /* Test.mp3 */; };
 		30BF06BE247CFD9D006BBE6F /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BF06BD247CFD9D006BBE6F /* TabBarView.swift */; };
+		30BF06C0247D3F12006BBE6F /* piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30BF06BF247D3F12006BBE6F /* piano.mp3 */; };
+		30BF06C2247D3F63006BBE6F /* Rock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30BF06C1247D3F63006BBE6F /* Rock.mp3 */; };
 		30DEAE65247BBFDC00E22099 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DEAE64247BBFDB00E22099 /* SearchBar.swift */; };
 		30E78D6C2462BF8100623160 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E78D6B2462BF8100623160 /* AppDelegate.swift */; };
 		30E78D6E2462BF8100623160 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E78D6D2462BF8100623160 /* SceneDelegate.swift */; };
@@ -33,8 +35,6 @@
 		6646567024752D9F0009D2D7 /* PickImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6646566F24752D9F0009D2D7 /* PickImageView.swift */; };
 		66465677247555E30009D2D7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66465676247555E30009D2D7 /* AVFoundation.framework */; };
 		6646568024756D880009D2D7 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6646567F24756D880009D2D7 /* SoundPlayer.swift */; };
-		66FF1CD9247D109800F55061 /* Rock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 66FF1CD8247D109800F55061 /* Rock.mp3 */; };
-		66FF1CDB247D133000F55061 /* piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 66FF1CDA247D133000F55061 /* piano.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +54,8 @@
 		30BF06B9247BCAB9006BBE6F /* ImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		30BF06BB247BCACC006BBE6F /* Test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Test.mp3; sourceTree = "<group>"; };
 		30BF06BD247CFD9D006BBE6F /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		30BF06BF247D3F12006BBE6F /* piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = piano.mp3; sourceTree = "<group>"; };
+		30BF06C1247D3F63006BBE6F /* Rock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Rock.mp3; sourceTree = "<group>"; };
 		30DEAE64247BBFDB00E22099 /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		30E78D682462BF8100623160 /* Musique test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Musique test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30E78D6B2462BF8100623160 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,8 +68,6 @@
 		6646566F24752D9F0009D2D7 /* PickImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickImageView.swift; sourceTree = "<group>"; };
 		66465676247555E30009D2D7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6646567F24756D880009D2D7 /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
-		66FF1CD8247D109800F55061 /* Rock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Rock.mp3; path = "../../../Music/Music/Media.localized/Unknown Artist/Unknown Album/Rock.mp3"; sourceTree = "<group>"; };
-		66FF1CDA247D133000F55061 /* piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = piano.mp3; path = "../../../Music/Music/Media.localized/Unknown Artist/Unknown Album/piano.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +104,9 @@
 			children = (
 				30E78D6B2462BF8100623160 /* AppDelegate.swift */,
 				30E78D6D2462BF8100623160 /* SceneDelegate.swift */,
+				30BF06C1247D3F63006BBE6F /* Rock.mp3 */,
 				30E78D6F2462BF8100623160 /* ContentView.swift */,
+				30BF06BF247D3F12006BBE6F /* piano.mp3 */,
 				30E78D712462BF8300623160 /* Assets.xcassets */,
 				30E78D762462BF8300623160 /* LaunchScreen.storyboard */,
 				30E78D792462BF8300623160 /* Info.plist */,
@@ -127,8 +129,6 @@
 				30DEAE64247BBFDB00E22099 /* SearchBar.swift */,
 				30BF06B9247BCAB9006BBE6F /* ImagePickerView.swift */,
 				30BF06BB247BCACC006BBE6F /* Test.mp3 */,
-				66FF1CDA247D133000F55061 /* piano.mp3 */,
-				66FF1CD8247D109800F55061 /* Rock.mp3 */,
 				30BF06BD247CFD9D006BBE6F /* TabBarView.swift */,
 			);
 			path = "Musique test";
@@ -210,8 +210,8 @@
 			files = (
 				30E78D782462BF8300623160 /* LaunchScreen.storyboard in Resources */,
 				30E78D752462BF8300623160 /* Preview Assets.xcassets in Resources */,
-				66FF1CDB247D133000F55061 /* piano.mp3 in Resources */,
-				66FF1CD9247D109800F55061 /* Rock.mp3 in Resources */,
+				30BF06C0247D3F12006BBE6F /* piano.mp3 in Resources */,
+				30BF06C2247D3F63006BBE6F /* Rock.mp3 in Resources */,
 				30BF06BC247BCACC006BBE6F /* Test.mp3 in Resources */,
 				30E78D722462BF8300623160 /* Assets.xcassets in Resources */,
 			);
